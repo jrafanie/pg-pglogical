@@ -11,7 +11,7 @@ module PG
     end
 
     module MigrationExtension
-      def drop_table(table, options = {})
+      def drop_table(table, **options)
         table_string = table.to_s
 
         pgl = PG::Pglogical::Client.new(ApplicationRecord.connection)
